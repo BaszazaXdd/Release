@@ -92,7 +92,7 @@ local autofarm = false
 local tool = ""
 
 -- ui
-local library = loadstring(game:HttpGet("https://polarhub.xyz/DOFATSUPERNOOB.lua"))()
+local library = loadstring(game:HttpGet("https://polarhub.xyz/POLARGOD.lua"))()
 local w = library:NewWindow("PROJECT CURSE")
 local wns1 = w:NewSection("Farm")
 
