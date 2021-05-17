@@ -11,11 +11,6 @@ ply.Character.Info.CursedEnergy.Changed:Connect(function()
     ply.Character.Info.CursedEnergy.Value = ply.Character.Info.CursedEnergyMax.Value
 end)
 
-local waitt;
-waitt = hookfunction(getrenv().wait, function()
-    return game:GetService("RunService").RenderStepped:wait()    
-end)
-
 local quest = {
     ["Curse Spirit[Rank:4]"] = {
         ["quest"] = workspace.NPC.GojoRank4.HumanoidRootPart
