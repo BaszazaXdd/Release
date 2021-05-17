@@ -79,12 +79,12 @@ end
 
 function getquest(name)
     if ply.Quest.QuestValue.Value == 0 and ply.Quest.QuestTarget.Value == 0 then
-        wait(1)
+        wait(1.5)
         local dispel = "Dispel " .. name:gsub("%[", " "):gsub("%]", "")
         ply.Character.HumanoidRootPart.CFrame = quest[name]["quest"].CFrame * CFrame.new(0, 0, 4)
         game:GetService("ReplicatedStorage").Remote.Quest:FireServer(dispel, ply.PlayerGui.Dialog.Frame, {"RespawnOnDead", "numericText", "PlayerInvite", "Interface", "SkillUI", "Fast Travel"}, "Town1", false)
     elseif ply.Quest.QuestValue.Value == ply.Quest.QuestTarget.Value and (ply.Quest.QuestValue.Value ~= 0 and ply.Quest.QuestTarget.Value ~= 0) then
-        wait(1)
+        wait(1.5)
         game:GetService("ReplicatedStorage").Remote.SendQuest:FireServer(false)
     end
 end
