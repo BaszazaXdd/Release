@@ -56,13 +56,13 @@ end
 function attack()
     spawn(function()
         for i = 1, 4 do
-            ply.Character.Combat.Combat.Attack:FireServer(i)
+            ply.Character.Combat.Combat.Attack:FireServer()
         end
     end)
 end
 
 function farm(mon)
-    ply.Character.HumanoidRootPart.CFrame = nearest(mon).HumanoidRootPart.CFrame * CFrame.new(0, 0, 4)
+    ply.Character.HumanoidRootPart.CFrame = nearest(mon).HumanoidRootPart.CFrame * CFrame.new(0, 0, 2)
     attack()
 end
 
@@ -73,12 +73,13 @@ function equip(toolname)
 end
 
 function getquest(name)
-    wait(2)
     if ply.Quest.QuestValue.Value == 0 and ply.Quest.QuestTarget.Value == 0 then
+        wait(2)
         local dispel = "Dispel " .. name:gsub("%[", " "):gsub("%]", "")
-        ply.Character.HumanoidRootPart.CFrame = quest[name]["quest"].CFrame * CFrame.new(0, 0, 4)
+        ply.Character.HumanoidRootPart.CFrame = quest[name]["quest"].CFrame * CFrame.new(0, 0, 2)
         game:GetService("ReplicatedStorage").Remote.Quest:FireServer(dispel, ply.PlayerGui.Dialog.Frame, {"RespawnOnDead", "numericText", "PlayerInvite", "Interface", "SkillUI", "Fast Travel"}, "Town1", false)
     elseif ply.Quest.QuestValue.Value == ply.Quest.QuestTarget.Value and (ply.Quest.QuestValue.Value ~= 0 and ply.Quest.QuestTarget.Value ~= 0) then
+        wait(2)
         game:GetService("ReplicatedStorage").Remote.SendQuest:FireServer(false)
     end
 end
